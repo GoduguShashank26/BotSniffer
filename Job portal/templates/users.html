@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClickHire | Total Users</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admindashboard.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <a href="/admin" class="brand-name">← Back to Dashboard</a>
+        </div>
+    </nav>
+
+    <h2 class="dashboard-title">Total Registered Users</h2>
+    <div class="content-section">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.mobile }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">No users found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ClickHire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='welcomestyles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <a href="#" class="brand-name">ClickHire</a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Jobs</a>
+                    <div class="dropdown-grid">
+                        <ul>
+                            <li class="dropdown-heading">Popular categories</li>
+                            <li><a href="#">IT jobs</a></li>
+                            <li><a href="#">Sales jobs</a></li>
+                            <li><a href="#">Marketing jobs</a></li>
+                            <li><a href="#">Data Science jobs</a></li>
+                            <li><a href="#">HR jobs</a></li>
+                            <li><a href="#">Engineering jobs</a></li>
+                        </ul>
+                        <ul>
+                            <li class="dropdown-heading">Jobs in demand</li>
+                            <li><a href="#">Fresher jobs</a></li>
+                            <li><a href="#">MNC jobs</a></li>
+                            <li><a href="#">Remote jobs</a></li>
+                            <li><a href="#">Work from home jobs</a></li>
+                            <li><a href="#">Walk-in jobs</a></li>
+                            <li><a href="#">Part-time jobs</a></li>
+                        </ul>
+                        <ul>
+                            <li class="dropdown-heading">Jobs by location</li>
+                            <li><a href="#">Jobs in Delhi</a></li>
+                            <li><a href="#">Jobs in Mumbai</a></li>
+                            <li><a href="#">Jobs in Bangalore</a></li>
+                            <li><a href="#">Jobs in Hyderabad</a></li>
+                            <li><a href="#">Jobs in Chennai</a></li>
+                            <li><a href="#">Jobs in Pune</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Companies</a>
+                    <div class="dropdown-grid">
+                        <ul>
+                            <li class="dropdown-heading">Explore categories</li>
+                            <li><a href="#">Unicorn</a></li>
+                            <li><a href="#">MNC</a></li>
+                            <li><a href="#">Internet</a></li>
+                            <li><a href="#">Startup</a></li>
+                            <li><a href="#">Product based</a></li>
+                        </ul>
+                        <ul>
+                            <li class="dropdown-heading">Explore collections</li>
+                            <li><a href="#">Top companies</a></li>
+                            <li><a href="#">IT Companies</a></li>
+                            <li><a href="#">Fintech companies</a></li>
+                            <li><a href="#">Sponsored companies</a></li>
+                            <li><a href="#">Featured companies</a></li>
+                        </ul>
+                        <ul>
+                            <li class="dropdown-heading">Research companies</li>
+                            <li><a href="#">Interview questions</a></li>
+                            <li><a href="#">Company salaries</a></li>
+                            <li><a href="#">Company reviews</a></li>
+                            <li><a href="#">Salary calculator</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Services</a>
+                    <div class="dropdown-grid">
+                        <ul>
+                            <li class="dropdown-heading">Resume writing</li>
+                            <li><a href="#">Text resume</a></li>
+                            <li><a href="#">Visual resume</a></li>
+                            <li><a href="#">Resume critique</a></li>
+                        </ul>
+                        <ul>
+                            <li class="dropdown-heading">Get recruiter's attention</li>
+                            <li><a href="#">Resume display</a></li>
+                        </ul>
+                        <ul>
+                            <li class="dropdown-heading">Monthly subscription</li>
+                            <li><a href="#">Basic and premium plans</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="button">
+                <a href="/login" class="btn-link">Login</a>
+                <a href="/register" class="btn-link">Register</a>
+            </div>            
+        </div>
+    </nav>
+
+    <div class="headings">
+        <h2 class="mainheading">ClickHire</h2>
+        <h2 class="heading"> - Click, Apply and get Hired </h2>
+    </div>
+
+    <div class="content">
+        <p>ClickHire is your one-stop job portal designed to connect talented individuals with top employers across the country. Whether you're a fresher or a seasoned professional, our powerful platform helps you search smart, apply fast, and get hired — effortlessly.</p>
+        <br>
+        <b>Discover thousands of jobs, across industries, in just a few clicks.</b>
+    </div>
+
+    <div class="search-container">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search for jobs, Companies...">
+            <button type="submit">Search</button>
+        </div>
+    </div>
+</body>
+</html>

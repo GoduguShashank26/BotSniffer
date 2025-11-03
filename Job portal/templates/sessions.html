@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClickHire | Active Sessions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admindashboard.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <a href="/admin" class="brand-name">← Back to Dashboard</a>
+        </div>
+    </nav>
+
+    <h2 class="dashboard-title">Active Sessions</h2>
+    <div class="content-section">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Session ID</th>
+                    <th>User</th>
+                    <th>IP Address</th>
+                    <th>Login Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in sessions %}
+                <tr>
+                    <td>{{ session.id }}</td>
+                    <td>{{ session.username }}</td>
+                    <td>{{ session.ip }}</td>
+                    <td>{{ session.login_time }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">No active sessions found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClickHire | Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admindashboard.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <a href="/" class="brand-name">ClickHire Admin</a>
+        </div>
+    </nav>
+
+    <h2 class="dashboard-title">Dashboard Overview</h2>
+    <div class="card-container">
+        <a href="{{ url_for('admin.users_view') }}" class="card">
+            <h3>Total Users</h3>
+            <p>{{ total_users }}</p>
+        </a>
+        <a href="{{ url_for('admin.sessions_view') }}" class="card">
+            <h3>Active Sessions</h3>
+            <p>{{ active_sessions }}</p>
+        </a>
+        <a href="{{ url_for('admin.jobs_view') }}" class="card">
+            <h3>Job Listings</h3>
+            <p>{{ total_jobs }}</p> 
+        </a>
+        <a href="{{ url_for('admin.view_bots') }}" class="card">
+            <h3>Bots Detected</h3>
+            <p>{{ total_bots }}</p>  
+        </a>
+    </div>
+</body>
+</html>

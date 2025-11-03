@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickHire | Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='registerstyles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="flash-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="flash {{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+    </div>
+    <nav class="navbar">
+        <div class="navdiv">
+            <a href="/" class="brand-name">ClickHire</a>
+            <div class="nav-right">
+                <span class="static-text">Already registered?</span>
+                <a href="/login" class="login-btn">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="register-container">
+        <div class="info-panel animate-slide">
+            <img src="{{ url_for('static', filename='profile.png') }}" alt="Join Us">
+            <h2>Why Register?</h2>
+            <ul>
+                <li>🚀 Build your profile and be discovered</li>
+                <li>📩 Get job alerts straight to your inbox</li>
+                <li>💼 Apply easily and grow your career</li>
+            </ul>
+        </div>
+        <div class="form-panel animate-fade">
+            <h1>Create Your Profile</h1>
+            <p>Search and apply for jobs at your fingertips</p>
+            <form method="POST" action="/register">
+                <label>Full Name</label>
+                <input type="text" name="full_name" placeholder="John Doe" required>
+
+                <label>Email ID</label>
+                <input type="email" name="email_id" placeholder="yourname@example.com" required>
+
+                <label>Mobile Number</label>
+                <input type="tel" name="mobile_number" placeholder="1234567890" required>
+
+                <label>Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    <span onclick="togglePassword()">👁️</span>
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        function togglePassword() {
+            const input = document.getElementById('password');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>

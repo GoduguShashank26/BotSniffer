@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClickHire | Bots Detected</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admindashboard.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <a href="/admin" class="brand-name">← Back to Dashboard</a>
+        </div>
+    </nav>
+
+    <h2 class="dashboard-title">Bot Detection Logs</h2>
+    <div class="content-section">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Bot ID</th>
+                    <th>IP Address</th>
+                    <th>Detected On</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bot in bots %}
+                <tr>
+                    <td>{{ bot.bot_id }}</td>
+                    <td>{{ bot.ip_address }}</td>
+                    <td>{{ bot.detected_on }}</td>
+                    <td>{{ bot.action }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">No bot activity detected.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

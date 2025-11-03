@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClickHire | Content</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='content.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="{{ url_for('auth.welcome') }}">ClickHire</a></div>
+            <ul>
+                <li><span class="welcome-msg">Welcome, <strong>{{ username }}</strong>!</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="background">
+        <div class="side-by-side-container">
+            <div class="section fade-in">
+                <h2>🚀 Explore Job Roles</h2>
+                <div class="two-column-boxes">
+                    {% for job in jobs %}
+                        <a href="{{ url_for('user.job_detail', job_id=job[0]) }}" class="box">{{ job[1] }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="section fade-in">
+                <h2>🏢 Top Hiring Companies</h2>
+                <div class="two-column-boxes">
+                    {% for company in companies %}
+                        <a href="{{ url_for('user.company_detail', name=company[1]|lower) }}" class="box">{{ company[1] }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

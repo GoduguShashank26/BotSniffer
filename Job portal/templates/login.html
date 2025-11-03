@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ClickHire | Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='loginstyles.css') }}">
+</head>
+<body>
+    <div class="flash-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                    {% for category, message in messages %}
+                        <p class="flash-message {{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <nav class="navbar">
+        <div class="navdiv">
+            <a href="/" class="brand-name">ClickHire</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form class="login-form" action="/login" method="POST">
+            <h2>Login to ClickHire</h2>
+            <div class="form">
+                <label for="role">Login as</label>
+                <select id="role" name="role" required>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <label for="username">Email ID / Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your Email ID or Username" required>
+
+                <label for="password">Password</label>
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span onclick="togglePassword()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:18px;">
+                        👁️
+                    </span>
+                </div>
+
+                <button type="submit">Login</button>
+
+                <p class="signup-link">
+                    Don't have an account? <a href="/register">Register here</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const currentType = passwordInput.getAttribute('type');
+        passwordInput.setAttribute('type', currentType === 'password' ? 'text' : 'password');
+    }
+    </script>
+</body>
+</html>

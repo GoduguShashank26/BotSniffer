@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    background: url("/static/jobsbg.jpg") no-repeat center center fixed;
+    color: #222;
+}
+
+.navbar {
+    background-color: #0077b6;
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navdiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+ul li a, .logout-btn {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+ul li a:hover, .logout-btn:hover {
+    color: #ffd166;
+}
+
+.welcome-msg {
+    color: #e0f7fa;
+    font-weight: 500;
+}
+
+.container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h1 {
+    font-size: 2rem;
+    color: #023047;
+    margin-bottom: 0.5rem;
+}
+
+.card .location {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.card h2 {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    color: #0077b6;
+}
+
+.card .description {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.card ul {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+}
+
+.card ul li {
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+}

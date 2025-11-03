@@ -1,0 +1,134 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("/static/contentback.png") no-repeat center center fixed;
+    background-size: cover;
+    animation: fadeInBody 1s ease-in;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.3); 
+    padding: 15px 20px;
+    font-size: 20px;
+    margin: 30px 20px 0 20px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30px 0 70px;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-msg {
+    color: #b4e1ff;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.side-by-side-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+.section {
+    background-color: rgba(255, 255, 255, 0.94);
+    padding: 30px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #007bff;
+    animation: fadeInSection 1s ease-in;
+}
+
+@keyframes fadeInSection {
+    from { transform: translateY(15px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+    font-size: 24px;
+}
+
+.two-column-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1);
+    background: #eaf4ff;
+    border: 1px solid #007bff;
+}
+
+@media (max-width: 768px) {
+    .two-column-boxes {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        max-width: 90%;
+    }
+}
